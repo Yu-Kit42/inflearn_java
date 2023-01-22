@@ -19,4 +19,5 @@ public class I_02_02 {
         }
         System.out.println(cnt);
     }
+}
 

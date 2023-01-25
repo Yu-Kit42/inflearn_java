@@ -33,14 +33,12 @@ public class I_03_02 {
             else break;
             if (p2 != tp2.length) P2 = arr2[p2];
             else break;
-
             if (P1 == P2) {
                 sb.append(P1).append(" ");
                 p1++;
                 p2++;
             } else if (P1 < P2) p1++;
             else p2++;
-
         }
         System.out.println(sb);
     }

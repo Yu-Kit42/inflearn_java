@@ -7,7 +7,6 @@ import java.util.Stack;
 
 public class I_05_05 {
     public static void main(String[] args) throws IOException {
-
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         char[] temp = bf.readLine().toCharArray();
         Stack<Character> stack = new Stack<>();

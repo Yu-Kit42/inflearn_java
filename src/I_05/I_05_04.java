@@ -11,7 +11,6 @@ public class I_05_04 {
         char[] temp = bf.readLine().toCharArray();
         Stack<Integer> stack = new Stack<>();
 
-
         for (char c : temp) {
             if (Character.isDigit(c)) {
                 stack.push(c - '0');

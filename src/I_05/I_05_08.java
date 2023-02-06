@@ -23,7 +23,7 @@ public class I_05_08 {
         int N = Integer.parseInt(tp1[0]);
         int M = Integer.parseInt(tp1[1]);
         String[] tp2 = bf.readLine().split(" ");
-        int[] max = new int[6];
+        int[] max = new int[51];
         int maxTp = 0;
 
         Queue<Person> q = new LinkedList<>();
@@ -32,10 +32,9 @@ public class I_05_08 {
         for (int i = 0; i < N; i++) {
             int p = Integer.parseInt(tp2[i]);
             q.offer(new Person(i, p));
-            max[p / 10 - 5] += 1;
-            maxTp = Math.max(maxTp, p / 10 - 5);
+            max[p - 50] += 1;
+            maxTp = Math.max(maxTp, p - 50);
         }
-
         int cnt = 0;
         int tp = 0;
 
@@ -44,16 +43,13 @@ public class I_05_08 {
                 maxTp -= 1;
                 continue;
             }
-
-            for (Person i : q) System.out.print(i.p + " ");
-            System.out.printf(" 인덱스:%d max:%d 개수:%d %d\n", q.peek().id, maxTp, max[maxTp], q.peek().p / 10 - 5);
-
-            if (q.peek().p / 10 - 5 == maxTp) {
+//            for (Person i : q) System.out.print(i.p + " ");
+//            System.out.printf(" 인덱스:%d max:%d 개수:%d %d\n", q.peek().id, maxTp, max[maxTp], q.peek().p - 50);
+            if (q.peek().p - 50 == maxTp) {
                 cnt++;
                 if (q.poll().id == M) break;
                 max[maxTp] -= 1;
             } else q.offer(q.poll());
-
         }
         System.out.println(cnt);
     }

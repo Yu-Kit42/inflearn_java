@@ -1,10 +1,10 @@
-package I_06_01;
+package I_06;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class I_06_03 {
+public class I_06_01 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(bf.readLine());
@@ -13,14 +13,14 @@ public class I_06_03 {
 
         String tp = "";
 
-        for (int i = 1; N > i; i++) {
-            for (int k = i; 0 < k; k--) {
-                int p1 = Integer.parseInt(tp1[k]);
-                int p2 = Integer.parseInt(tp1[k - 1]);
-                if (p1 < p2) {
-                    tp = tp1[k];
-                    tp1[k] = tp1[k - 1];
-                    tp1[k - 1] = tp;
+        for (int i = 0; i < N - 1; i++) {
+            for (int k = i + 1; k < N; k++) {
+                int p1 = Integer.parseInt(tp1[i]);
+                int p2 = Integer.parseInt(tp1[k]);
+                if (p1 > p2) {
+                    tp = tp1[i];
+                    tp1[i] = tp1[k];
+                    tp1[k] = tp;
                 }
             }
         }
